@@ -1,0 +1,211 @@
+/*
+ * Estilos principales para la aplicación de cálculo de discos.
+ * Se utiliza un diseño claro y minimalista con colores vivos.
+ */
+
+:root {
+  --background: #f9fafb;
+  --surface: #ffffff;
+  --accent: #00a6fb;
+  --accent-dark: #007bb8;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --disc-25: #e53935; /* rojo */
+  --disc-20: #1e88e5; /* azul */
+  --disc-15: #fdd835; /* amarillo */
+  --disc-10: #43a047; /* verde */
+  --disc-5: #bdbdbd; /* gris claro */
+  --disc-2_5: #000000; /* negro */
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Modo selector */
+.mode-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.mode-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--surface);
+  color: var(--text-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mode-button.active {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.mode-button:hover {
+  background-color: var(--accent-dark);
+  color: #fff;
+}
+
+/* Secciones de modo */
+.mode-section {
+  background-color: var(--surface);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-group input[type='number'],
+.input-group select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input-group input[type='number']::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.primary-btn {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: var(--accent-dark);
+}
+
+/* Resultado calculadora */
+.result-section {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.bar-visualization {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.bar-side {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  min-height: 40px;
+  padding: 5px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+}
+
+.disc {
+  height: 30px;
+  border-radius: 4px;
+  margin: 0 2px;
+  display: inline-block;
+}
+
+/* Entrenamiento */
+.training-setup,
+.training-game {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.disc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.disc-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.disc-input-row span.weight-label {
+  width: 40px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.disc-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.disc-input-row input[type='number'] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.feedback {
+  font-weight: 600;
+  min-height: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}
