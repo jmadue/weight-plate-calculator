@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Discos</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1 class="title">Calculadora de Discos de Barra</h1>
+
+    <!-- Selector de modo -->
+    <div class="mode-selector">
+      <button id="calculatorBtn" class="mode-button active">Modo calculadora</button>
+      <button id="trainingBtn" class="mode-button">Modo entrenamiento</button>
+    </div>
+
+    <!-- Modo calculadora -->
+    <div id="calculatorMode" class="mode-section">
+      <div class="input-group">
+        <label for="targetWeight">Peso total objetivo (kg)</label>
+        <input
+          type="number"
+          id="targetWeight"
+          min="0"
+          placeholder="Ej. 100"
+        />
+      </div>
+      <div class="input-group">
+        <label for="barType">Tipo de barra</label>
+        <select id="barType">
+          <option value="20">Olímpica (20 kg)</option>
+          <option value="15">Técnica (15 kg)</option>
+          <option value="10">Ligera (10 kg)</option>
+        </select>
+      </div>
+      <div class="input-group checkbox-group">
+        <input type="checkbox" id="minimalDiscs" />
+        <label for="minimalDiscs">Usar mínima cantidad de discos</label>
+      </div>
+      <button id="calculateBtn" class="primary-btn">Calcular</button>
+      <div id="calcResult" class="result-section hidden">
+        <h3>Resultado</h3>
+        <p id="perSideResult"></p>
+        <p id="discSummary"></p>
+        <div id="barVisualization" class="bar-visualization"></div>
+      </div>
+    </div>
+
+    <!-- Modo entrenamiento -->
+    <div id="trainingMode" class="mode-section hidden">
+      <div id="trainingSetup" class="training-setup">
+        <button id="startTrainingBtn" class="primary-btn">Comenzar entrenamiento</button>
+        <div class="input-group">
+          <label for="trainingBarType">Tipo de barra para el entrenamiento</label>
+          <select id="trainingBarType">
+            <option value="20">Olímpica (20 kg)</option>
+            <option value="15">Técnica (15 kg)</option>
+            <option value="10">Ligera (10 kg)</option>
+          </select>
+        </div>
+        <div class="input-group checkbox-group">
+          <input type="checkbox" id="continuousMode" />
+          <label for="continuousMode">Modo continuo</label>
+        </div>
+      </div>
+      <div id="trainingGame" class="training-game hidden">
+        <h3 id="challengeTitle"></h3>
+        <div id="discInputs" class="disc-inputs"></div>
+        <button id="checkAnswerBtn" class="primary-btn">Comprobar</button>
+        <button id="nextChallengeBtn" class="primary-btn hidden">Siguiente desafío</button>
+        <p id="feedback" class="feedback"></p>
+        <div class="scoreboard">
+          <p>Tiempo actual: <span id="currentTime">0.0</span> s</p>
+          <p>Puntaje: <span id="currentScore">0</span></p>
+          <p>Récord: <span id="highScore">0</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
